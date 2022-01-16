@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import {Button, Col, Container, Row} from "react-bootstrap";
 
-class HelloMessage extends React.Component {
+class StrengthComparator extends React.Component {
     squatVal;
 
     onChangeValue = () => {
@@ -18,41 +20,69 @@ class HelloMessage extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <label htmlFor='squat'>Przysiad: </label>
-                    <input onChange={this.onChangeValue} type="number" id='squat' placeholder='kg' />
-                </div>
-                <div>
-                    <label htmlFor='frontsquat'>Przysiad - front: </label>
-                    <input type="number" id='frontsquat' placeholder='kg' />
-                </div>
-                <div>
-                    <label htmlFor='benchpress'>Wyciskanie sztangi leżąc: </label>
-                    <input type="number" id='benchpress' placeholder='kg' />
-                </div>
-                <div>
-                    <label htmlFor='militarypress'>Wyciskanie sztangi stojąc: </label>
-                    <input type="number" id='militarypress' placeholder='kg' />
-                </div>
-                <div>
-                    <label htmlFor='pullups'>Podciąganie na drążku podchwytem: </label>
-                    <input type="number" id='pullups' placeholder='kg' />
-                </div>
-                <div>
-                    <label htmlFor='dips'>Pompki na poręczach: </label>
-                    <input type="number" id='dips' placeholder='kg' />
-                </div>
-                <div>
-                    <label htmlFor='deadlift'>Martwy ciąg: </label>
-                    <input type="number" id='deadlift' placeholder='kg' />
-                </div>
-            </div>
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col" htmlFor='squat'>Przysiad: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" onChange={this.onChangeValue} type="number" id='squat' placeholder='kg'/>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col-6" htmlFor='frontsquat'>Przysiad - front: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" type="number" id='frontsquat' placeholder='kg' />
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col" htmlFor='benchpress'>Wyciskanie sztangi leżąc: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" type="number" id='benchpress' placeholder='kg'/>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col" htmlFor='militarypress'>Wyciskanie sztangi stojąc: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" type="number" id='militarypress' placeholder='kg'/>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col" htmlFor='pullups'>Podciąganie na drążku podchwytem: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" type="number" id='pullups' placeholder='kg'/>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col" htmlFor='dips'>Pompki na poręczach: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" type="number" id='dips' placeholder='kg'/>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs={6} md={6}>
+                        <label className="col" htmlFor='deadlift'>Martwy ciąg: </label>
+                    </Col>
+                    <Col xs={6} md={6}>
+                        <input className="col" type="number" id='deadlift' placeholder='kg'/>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }
 
 ReactDOM.render(
-    <HelloMessage name='dupa'/>,
+    <StrengthComparator/>,
     document.getElementById('root')
 );
